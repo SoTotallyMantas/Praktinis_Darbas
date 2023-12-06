@@ -672,10 +672,10 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertStudentSubject`(IN studentsubjectId INT, IN studentId INT, IN subjectId INT, IN grade INT )
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertStudentSubject`(IN studentId INT, IN subjectId INT, IN grade INT )
 BEGIN
-    INSERT INTO student_subject(student_subject_id,student_id , subject_id, grade)
-    VALUES (studentsubjectId,studentId , subjectId, grade);
+    INSERT INTO student_subject(student_id , subject_id, grade)
+    VALUES (studentId , subjectId, grade);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
